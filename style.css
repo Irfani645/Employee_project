@@ -1,0 +1,226 @@
+/* Initial Structural CSS - START */
+:root { 
+	--btn: #ff4081; 
+	--btn-hover: #ff77a9; 
+	--item-bg: #f0f0f0; 
+	--modal-bg: rgba(0, 0, 0, 0.5); 
+	--header-bg: #282c34;
+	--main-bg: #f5f5f5;
+	--text-color: #fff;
+	--border-color: #ccc;
+} 
+body { 
+	font-family: 'Roboto', sans-serif; 
+	margin: 0;
+	background: linear-gradient(to right, #6a11cb, #2575fc);
+	color: var(--text-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	padding: 0;
+} 
+#app {
+	background-color: var(--main-bg);
+	width: 90%;
+	max-width: 1200px;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	color: #000;
+}
+
+.header { 
+	display: flex; 
+	justify-content: space-between; 
+	align-items: center; 
+	background-color: var(--header-bg);
+	padding: 10px 20px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+} 
+
+.header > button { 
+	padding: 10px 15px; 
+	border-radius: 20px; 
+	border: none; 
+	background-color: var(--btn); 
+	cursor: pointer; 
+	color: var(--text-color);
+	transition: background-color 0.3s ease;
+} 
+
+.header > button:hover { 
+	background-color: var(--btn-hover); 
+} 
+
+.employees { 
+	display: flex;
+	gap: 20px;
+} 
+
+.employees > div { 
+	border: 1px solid var(--border-color); 
+	overflow-y: auto; 
+	height: 450px; 
+	border-radius: 10px;
+	background: var(--item-bg);
+} 
+
+.employees__names { 
+	width: 30%; 
+} 
+
+.employees__single { 
+	width: 70%; 
+} 
+
+.employees__names, 
+.employees__single { 
+	padding: 10px; 
+	display: flex; 
+	flex-direction: column; 
+} 
+
+.employees__names--title, 
+.employees__single--title { 
+	padding-bottom: 10px; 
+	margin-bottom: 10px; 
+	text-align: center; 
+	border-bottom: 2px solid var(--border-color); 
+	font-size: 1.2rem;
+} 
+/* Initial Structural CSS - END */
+
+/* Render all Employees - START */
+.employees__names--list { 
+	display: flex; 
+	flex-direction: column; 
+} 
+
+.employees__names--item { 
+	cursor: pointer; 
+	padding: 10px 15px; 
+	margin-bottom: 10px; 
+	text-align: center; 
+	background-color: var(--item-bg); 
+	border-radius: 10px; 
+	display: flex; 
+	justify-content: space-between; 
+	align-items: center; 
+	transition: background-color 0.3s ease, transform 0.3s ease;
+} 
+
+.employees__names--item:hover, 
+.selected { 
+	background-color: var(--btn); 
+	color: var(--text-color);
+	transform: scale(1.02);
+} 
+/* Render all Employees - END */
+
+/* Render Single Employee - START */
+.employees__single--heading { 
+	text-align: center; 
+	font-size: 25px; 
+	text-transform: uppercase; 
+	padding: 5px; 
+} 
+
+.employees__single--info { 
+	display: flex; 
+	flex-direction: column; 
+	align-items: center; 
+	gap: 10px; 
+} 
+
+.employees__single--info > img { 
+	width: 250px; 
+	height: 250px; 
+	object-fit: cover; 
+	border-radius: 50%; 
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+} 
+/* Render Single Employee - END */
+
+/* Add Employee - START */
+.addEmployee { 
+	display: none; 
+	width: 100%; 
+	height: 100%; 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	justify-content: center; 
+	align-items: center; 
+	background-color: var(--modal-bg); 
+} 
+
+.addEmployee_create { 
+	width: 400px; 
+	background-color: white; 
+	box-shadow: 0 0 50px grey; 
+	padding: 20px; 
+	border-radius: 10px; 
+	text-align: center; 
+	display: flex; 
+	flex-direction: column; 
+	gap: 15px; 
+	color: #000;
+} 
+
+.addEmployee_create > div { 
+	display: grid; 
+	grid-template-columns: 1fr 1fr; 
+	gap: 15px; 
+} 
+
+.addEmployee_create input { 
+	padding: 10px; 
+	border-radius: 5px; 
+	border: 1px solid var(--border-color); 
+	font-size: 1rem;
+} 
+
+/* removes arrows from input type='number' */
+.addEmployee_create input::-webkit-outer-spin-button, 
+.addEmployee_create input::-webkit-inner-spin-button { 
+	-webkit-appearance: none; 
+	margin: 0; 
+} 
+
+.addEmployee_create--submit { 
+	padding: 10px 20px; 
+	border-radius: 5px; 
+	border: none; 
+	background-color: var(--btn); 
+	cursor: pointer; 
+	font-size: 1rem;
+	color: var(--text-color);
+	transition: background-color 0.3s ease;
+} 
+
+.addEmployee_create--submit:hover { 
+	background-color: var(--btn-hover); 
+} 
+/* Add Employee - END */
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo__image {
+	height: 50px;
+	margin-right: 10px;
+}
+
+.logo__text {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #f2efef;
+}
+
+.saveData :hover{
+color : red
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<meta charset="UTF-8" /> 
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0" /> 
+	<link rel="stylesheet" href="style.css" /> 
+	<title>PIMS Employee Database Management System</title> 
+</head> 
+
+<body> 
+	<div id="app"> 
+		<header class="header"> 
+			<div class="logo">
+				<img src="pimslogo.png" alt="Logo" class="logo__image" />
+				<span class="logo__text">PIMS Employee Database Management</span>
+			</div>
+			<button class="createEmployee"> 
+				Add Employee 
+			</button> 
+		</header> 
+
+		<div class="employees"> 
+			<div class="employees__names"> 
+				<span class="employees__names--title"> 
+					Employee List 
+				</span> 
+				<div class="employees__names--list"></div> 
+			</div> 
+			<div class="employees__single"> 
+				<div class="employees__single--title"> 
+					Employee Information 
+				</div> 
+				<div class="employees__single--info"></div> 
+			</div> 
+		</div> 
+		<!-- Add Employee Code - START -->
+		<div class="addEmployee"> 
+			<form class="addEmployee_create"> 
+				Add a new Employee 
+				<div> 
+					<input type="text" name="firstName"
+						placeholder="First Name" required /> 
+					<input type="text" name="lastName"
+						placeholder="Last Name" required /> 
+				</div> 
+				<input type="text" name="imageUrl"
+					placeholder="Image URL (Optional)" /> 
+				<input type="email" name="email"
+					placeholder="Email" required /> 
+				<input type="number" name="contactNumber"
+					placeholder="Contact" required /> 
+				<input type="number" name="salary"
+					placeholder="Salary" required /> 
+				<input type="text" name="address"
+					placeholder="Address" required /> 
+				<input type="date" name="dob"
+					placeholder="Date of Birth"
+					class="addEmployee_create--dob"
+					required /> 
+				<input type="submit"
+					class="addEmployee_create--submit"
+					value="Submit" /> 
+			</form> 
+		</div> 
+		<!-- Add Employee Code - END -->
+		<button class="saveData" style="background-color: #0766b4; color: white; padding: 15px 20px; border: none; cursor: pointer; font-size: 16px; margin: 10px;" onmouseover="this.style.backgroundColor='#45a049';" onmouseout="this.style.backgroundColor='#4CAF50';">Save Data</button>
+
+	</div> 
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+	<script src="script.mjs"></script> 
+</body> 
+
+</html>
